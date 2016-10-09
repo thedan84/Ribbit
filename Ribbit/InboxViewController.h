@@ -6,14 +6,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MediaPlayer/MediaPlayer.h>
+#import <AVKit/AVKit.h>
+#import <AVFoundation/AVFoundation.h>
+//#import <MediaPlayer/MediaPlayer.h>
 
 @class Message;
 
 @interface InboxViewController : UITableViewController
 
 @property (nonatomic, strong) Message *selectedMessage;
-@property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
+//Updated to use AVPlayer
+@property (nonatomic, strong) AVPlayer *moviePlayer;
+//@property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
 
 - (IBAction)logout:(id)sender;
 

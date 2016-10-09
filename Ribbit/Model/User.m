@@ -40,7 +40,10 @@ static NSInteger identifier = 1;
 }
 
 - (void)addFriend:(User *)friend {
-  [self.friendsMutable addObject:friend];
+    //Updated so that a friend doesn't appear multiple times in the friends array
+    if (![self.friends containsObject:friend]) {
+        [self.friendsMutable addObject:friend];
+    }
 }
 
 - (void)removeFriend:(User *)friend {

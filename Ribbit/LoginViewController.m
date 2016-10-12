@@ -46,6 +46,8 @@
     }
     else {
         
+        
+        
 //        [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
 //            if (error) {
 //                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"

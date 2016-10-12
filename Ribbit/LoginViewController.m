@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "InboxViewController.h"
+#import "User.h"
 
 @interface LoginViewController ()
 
@@ -46,6 +48,15 @@
     }
     else {
         
+        User *currentUser = [User currentUser];
+        currentUser.username = username;
+        
+        InboxViewController *inboxVC = [[InboxViewController alloc] init];
+        inboxVC.currentUser = currentUser;
+        
+        [self.navigationController popToRootViewControllerAnimated:YES];
+
+        
 //        [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
 //            if (error) {
 //                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"
@@ -54,7 +65,6 @@
 //                [alertView show];
 //            }
 //            else {
-                [self.navigationController popToRootViewControllerAnimated:YES];
 //            }
 //        }];
     }

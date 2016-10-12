@@ -18,6 +18,8 @@
 
 @implementation InboxViewController
 
+@synthesize currentUser = _currentUser;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -25,14 +27,31 @@
     //Updated to use AVPlayer
     self.moviePlayer = [[AVPlayer alloc] init];
 //    self.moviePlayer = [[MPMoviePlayerController alloc] init];
+<<<<<<< HEAD
     
+//    User *currentUser = [User currentUser];
+//    if ([currentUser.username ] < 1) {
+//        NSLog(@"Current user: %@", currentUser.username);
+//    }
+//    else {
+//        [self performSegueWithIdentifier:@"showLogin" sender:self];
+//    }
+    
+    //Updated so the correct VC shows up at launch
+    if (_currentUser != nil) {
+        NSLog(@"%@", _currentUser.username);
+    } else {
+=======
+        
     User *currentUser = [User currentUser];
     if (currentUser) {
         NSLog(@"Current user: %@", currentUser.username);
     }
     else {
+>>>>>>> master
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
+    
 }
 
 - (NSArray *)messages {
@@ -86,18 +105,17 @@
         File *videoFile = self.selectedMessage.file;
         
         //Updated to use AVPlayer
-        
         self.moviePlayer = [AVPlayer playerWithURL:videoFile.fileURL];
         
         AVPlayerViewController *playerVC = [[AVPlayerViewController alloc] init];
         playerVC.player = self.moviePlayer;
-//        playerVC.showsPlaybackControls = YES;
         
         [self presentViewController:playerVC animated:true completion:^{
             [self.moviePlayer play];
         }];
         
         
+        //        playerVC.showsPlaybackControls = YES;
 //        self.moviePlayer.contentURL = videoFile.fileURL;
 //        [self.moviePlayer prepareToPlay];
 //        [self.moviePlayer thumbnailImageAtTime:0 timeOption:MPMovieTimeOptionNearestKeyFrame];

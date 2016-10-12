@@ -26,13 +26,33 @@
     self.moviePlayer = [[AVPlayer alloc] init];
 //    self.moviePlayer = [[MPMoviePlayerController alloc] init];
     
+//    User *currentUser = [User currentUser];
+//    if (currentUser) {
+//        NSLog(@"Current user: %@", currentUser.username);
+//    }
+//    else {
+//        [self performSegueWithIdentifier:@"showLogin" sender:self];
+//    }
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
     User *currentUser = [User currentUser];
-    if (currentUser) {
+    
+    if (currentUser == [[NSUserDefaults standardUserDefaults] valueForKey:@"User"]) {
         NSLog(@"Current user: %@", currentUser.username);
-    }
-    else {
+    } else {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
+    
+//    User *currentUser = [User currentUser];
+//    if (currentUser) {
+//        NSLog(@"Current user: %@", currentUser.username);
+//    }
+//    else {
+//        [self performSegueWithIdentifier:@"showLogin" sender:self];
+//    }
 }
 
 - (NSArray *)messages {

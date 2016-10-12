@@ -50,6 +50,9 @@
         newUser.password = password;
         newUser.email = email;
         
+        [[NSUserDefaults standardUserDefaults] setValue:newUser forKey:@"User"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
 //        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 //            if (error) {
 //                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"

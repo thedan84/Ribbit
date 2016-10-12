@@ -55,6 +55,7 @@
         inboxVC.currentUser = currentUser;
         
         [self.navigationController popToRootViewControllerAnimated:YES];
+
         
 //        [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
 //            if (error) {

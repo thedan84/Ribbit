@@ -27,6 +27,7 @@
     //Updated to use AVPlayer
     self.moviePlayer = [[AVPlayer alloc] init];
 //    self.moviePlayer = [[MPMoviePlayerController alloc] init];
+<<<<<<< HEAD
     
 //    User *currentUser = [User currentUser];
 //    if ([currentUser.username ] < 1) {
@@ -40,6 +41,14 @@
     if (_currentUser != nil) {
         NSLog(@"%@", _currentUser.username);
     } else {
+=======
+        
+    User *currentUser = [User currentUser];
+    if (currentUser) {
+        NSLog(@"Current user: %@", currentUser.username);
+    }
+    else {
+>>>>>>> master
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
     
@@ -96,18 +105,17 @@
         File *videoFile = self.selectedMessage.file;
         
         //Updated to use AVPlayer
-        
         self.moviePlayer = [AVPlayer playerWithURL:videoFile.fileURL];
         
         AVPlayerViewController *playerVC = [[AVPlayerViewController alloc] init];
         playerVC.player = self.moviePlayer;
-//        playerVC.showsPlaybackControls = YES;
         
         [self presentViewController:playerVC animated:true completion:^{
             [self.moviePlayer play];
         }];
         
         
+        //        playerVC.showsPlaybackControls = YES;
 //        self.moviePlayer.contentURL = videoFile.fileURL;
 //        [self.moviePlayer prepareToPlay];
 //        [self.moviePlayer thumbnailImageAtTime:0 timeOption:MPMovieTimeOptionNearestKeyFrame];

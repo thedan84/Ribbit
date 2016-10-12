@@ -18,6 +18,8 @@
 
 @implementation InboxViewController
 
+@synthesize currentUser = _currentUser;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -27,32 +29,20 @@
 //    self.moviePlayer = [[MPMoviePlayerController alloc] init];
     
 //    User *currentUser = [User currentUser];
-//    if (currentUser) {
+//    if ([currentUser.username ] < 1) {
 //        NSLog(@"Current user: %@", currentUser.username);
 //    }
 //    else {
 //        [self performSegueWithIdentifier:@"showLogin" sender:self];
 //    }
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-
-    User *currentUser = [User currentUser];
     
-    if (currentUser == [[NSUserDefaults standardUserDefaults] valueForKey:@"User"]) {
-        NSLog(@"Current user: %@", currentUser.username);
+    //Updated so the correct VC shows up at launch
+    if (_currentUser != nil) {
+        NSLog(@"%@", _currentUser.username);
     } else {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
     
-//    User *currentUser = [User currentUser];
-//    if (currentUser) {
-//        NSLog(@"Current user: %@", currentUser.username);
-//    }
-//    else {
-//        [self performSegueWithIdentifier:@"showLogin" sender:self];
-//    }
 }
 
 - (NSArray *)messages {

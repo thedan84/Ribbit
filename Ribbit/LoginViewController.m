@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "InboxViewController.h"
 #import "User.h"
 
 @interface LoginViewController ()
@@ -47,20 +48,13 @@
     }
     else {
         
-        User *user = [[NSUserDefaults standardUserDefaults] valueForKey:@"User"];
+        User *currentUser = [User currentUser];
+        currentUser.username = username;
         
-        if (user.username == username && user.password == password) {
-            [self.navigationController popToRootViewControllerAnimated:YES];
-        } else {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"Make sure you enter the correct username and password!" preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-            
-            [alert addAction:okAction];
-            
-            [self presentViewController:alert animated:true completion:nil];
-        }
+        InboxViewController *inboxVC = [[InboxViewController alloc] init];
+        inboxVC.currentUser = currentUser;
         
+        [self.navigationController popToRootViewControllerAnimated:YES];
         
 //        [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
 //            if (error) {

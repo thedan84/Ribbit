@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "User.h"
 //#import <MediaPlayer/MediaPlayer.h>
 
 @class Message;
@@ -18,6 +19,9 @@
 //Updated to use AVPlayer
 @property (nonatomic, strong) AVPlayer *moviePlayer;
 //@property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
+
+
+@property (nonatomic, strong) User *currentUser;
 
 - (IBAction)logout:(id)sender;
 

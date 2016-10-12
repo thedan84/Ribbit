@@ -55,11 +55,6 @@
                                     <action selector="login:" destination="BA1-Cp-RJu" eventType="touchUpInside" id="LcU-TO-5pp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Don't have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUF-nl-vFc">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZF-ds-FrG">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="73" id="XdY-Qg-R5e"/>
@@ -77,6 +72,11 @@
                                     <segue destination="EZc-59-qKm" kind="push" id="Qwo-lL-hgI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Don't have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUF-nl-vFc">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -85,14 +85,14 @@
                             <constraint firstItem="ZQC-BI-gMf" firstAttribute="leading" secondItem="TnU-aj-axw" secondAttribute="leading" constant="20" symbolic="YES" id="K1v-nY-vU5"/>
                             <constraint firstItem="cZF-ds-FrG" firstAttribute="top" secondItem="TnU-aj-axw" secondAttribute="top" constant="250" id="KFL-r4-ku8"/>
                             <constraint firstItem="NRF-Ak-4Dc" firstAttribute="top" secondItem="TnU-aj-axw" secondAttribute="top" constant="100" id="N03-5a-2lb"/>
-                            <constraint firstItem="XUF-nl-vFc" firstAttribute="leading" secondItem="TnU-aj-axw" secondAttribute="leading" constant="20" symbolic="YES" id="V6R-6G-Ibk"/>
+                            <constraint firstItem="XUF-nl-vFc" firstAttribute="leading" secondItem="TnU-aj-axw" secondAttribute="leading" constant="71" id="V6R-6G-Ibk"/>
                             <constraint firstAttribute="trailing" secondItem="cZF-ds-FrG" secondAttribute="trailing" constant="34" id="Vy0-mi-gZV"/>
                             <constraint firstItem="ZQC-BI-gMf" firstAttribute="top" secondItem="LtO-lO-faO" secondAttribute="bottom" constant="8" symbolic="YES" id="X2G-Ij-0lH"/>
                             <constraint firstItem="LtO-lO-faO" firstAttribute="leading" secondItem="TnU-aj-axw" secondAttribute="leading" constant="20" symbolic="YES" id="bN3-42-ZQG"/>
                             <constraint firstAttribute="trailing" secondItem="ZQC-BI-gMf" secondAttribute="trailing" constant="20" symbolic="YES" id="kww-je-3bh"/>
                             <constraint firstItem="NRF-Ak-4Dc" firstAttribute="leading" secondItem="TnU-aj-axw" secondAttribute="leading" constant="20" symbolic="YES" id="lLg-SX-fCb"/>
                             <constraint firstItem="LtO-lO-faO" firstAttribute="top" secondItem="NRF-Ak-4Dc" secondAttribute="bottom" constant="8" symbolic="YES" id="ygs-IK-S4H"/>
-                            <constraint firstItem="XUF-nl-vFc" firstAttribute="baseline" secondItem="ZQC-BI-gMf" secondAttribute="baseline" id="ze2-Xd-d0c"/>
+                            <constraint firstItem="XUF-nl-vFc" firstAttribute="baseline" secondItem="ZQC-BI-gMf" secondAttribute="baseline" constant="40.5" id="ze2-Xd-d0c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ribbit" id="Xza-Tr-b7l"/>
@@ -244,7 +244,7 @@
         <!--Ribbit-->
         <scene sceneID="K2q-hk-Jwk">
             <objects>
-                <tableViewController id="4uG-zQ-ztV" customClass="InboxViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="InboxVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4uG-zQ-ztV" customClass="InboxViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pwh-yz-zVz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -11,8 +11,8 @@
 
 @interface File : NSObject
 
-@property (strong, nonatomic) NSString *filename;
-@property (strong, nonatomic) NSData *data;
+@property (weak, nonatomic) NSString *filename;
+@property (weak, nonatomic) NSData *data;
 
 + (instancetype)fileWithName:(NSString*)filename data:(NSData*)fileData;
 

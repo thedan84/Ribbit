@@ -38,12 +38,6 @@
         [alert addAction:okAction];
         
         [self presentViewController:alert animated:true completion:nil];
-        
-        
-//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!"
-//                                                            message:@"Make sure you enter a username, password, and email address!"
-//                                                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//        [alertView show];
     }
     else {
         User *newUser = [User currentUser];
@@ -51,7 +45,6 @@
         newUser.password = password;
         newUser.email = email;
         
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         InboxViewController *inboxVC = [[InboxViewController alloc] init];
         inboxVC.currentUser = newUser;
         

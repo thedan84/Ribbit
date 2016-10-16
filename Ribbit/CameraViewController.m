@@ -154,11 +154,6 @@
         [alert addAction:okAction];
         
         [self presentViewController:alert animated:true completion:nil];
-        
-//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Try again!"
-//                                                            message:@"Please capture or select a photo or video to share!"
-//                                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//        [alertView show];
     }
     else {
         [self uploadMessage];
@@ -174,6 +169,8 @@
     NSString *fileType;
     
     if (self.image != nil) {
+        
+        //Updated to fix the memory leak
         UIImage *newImage = [self resizeImage:self.image toWidth:100 andHeight:100];
         fileData = UIImagePNGRepresentation(newImage);
         fileName = [NSString stringWithFormat:@"%f.png",[NSDate timeIntervalSinceReferenceDate]];
@@ -198,11 +195,6 @@
             [alert addAction:okAction];
             
             [self presentViewController:alert animated:true completion:nil];
-            
-//            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!"
-//                                                                message:@"Please try sending your message again."
-//                                                               delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//            [alertView show];
         }
         else {
             Message *message = [[Message alloc] init];
@@ -224,12 +216,6 @@
                     [alert addAction:okAction];
                     
                     [self presentViewController:alert animated:true completion:nil];
-                    
-                    
-//                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!"
-//                                                                        message:@"Please try sending your message again."
-//                                                                       delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//                    [alertView show];
                 }
                 else {
                     // Everything was successful!

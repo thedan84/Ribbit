@@ -15,8 +15,6 @@
 
 //Updated so friends don't show up multiple times in the EditFriendsVC
 @property (nonatomic, strong, readonly) NSArray<User *> *allUsers;
-//- (NSArray *) allUsers;
-
 
 + (instancetype) currentApp;
 - (void) addMessage:(Message*)message;

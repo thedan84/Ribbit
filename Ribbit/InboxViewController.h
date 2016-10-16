@@ -18,7 +18,6 @@
 @property (nonatomic, strong) Message *selectedMessage;
 //Updated to use AVPlayer
 @property (nonatomic, strong) AVPlayer *moviePlayer;
-//@property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
 
 //Updated so the correct VC shows up at launch
 @property (nonatomic, strong) User *currentUser;

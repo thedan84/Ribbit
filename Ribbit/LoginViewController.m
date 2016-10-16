@@ -39,12 +39,6 @@
         [alert addAction:okAction];
         
         [self presentViewController:alert animated:true completion:nil];
-        
-        
-//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!"
-//                                                            message:@"Make sure you enter a username and password!"
-//                                                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//        [alertView show];
     }
     else {
         

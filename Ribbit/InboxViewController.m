@@ -18,28 +18,16 @@
 
 @implementation InboxViewController
 
-@synthesize currentUser = _currentUser;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     //Updated to use AVPlayer
     self.moviePlayer = [[AVPlayer alloc] init];
-//    self.moviePlayer = [[MPMoviePlayerController alloc] init];
-
-    
-//    User *currentUser = [User currentUser];
-//    if ([currentUser.username ] < 1) {
-//        NSLog(@"Current user: %@", currentUser.username);
-//    }
-//    else {
-//        [self performSegueWithIdentifier:@"showLogin" sender:self];
-//    }
     
     //Updated so the correct VC shows up at launch
-    if (_currentUser != nil) {
-        NSLog(@"%@", _currentUser.username);
+    if (self.currentUser != nil) {
+        NSLog(@"%@", self.currentUser.username);
     } else {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
@@ -105,16 +93,6 @@
         [self presentViewController:playerVC animated:true completion:^{
             [self.moviePlayer play];
         }];
-        
-        
-        //        playerVC.showsPlaybackControls = YES;
-//        self.moviePlayer.contentURL = videoFile.fileURL;
-//        [self.moviePlayer prepareToPlay];
-//        [self.moviePlayer thumbnailImageAtTime:0 timeOption:MPMovieTimeOptionNearestKeyFrame];
-//        
-//        // Add it to the view controller so we can see it
-//        [self.view addSubview:self.moviePlayer.view];
-//        [self.moviePlayer setFullscreen:YES animated:YES];
     }
     
     // Delete it!
